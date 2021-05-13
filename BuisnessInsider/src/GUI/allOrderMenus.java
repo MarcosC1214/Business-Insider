@@ -22,7 +22,7 @@ import javax.swing.text.DocumentFilter;
 import javax.swing.text.DocumentFilter.FilterBypass;
 
 
-public class allOrderMenus {
+public class allOrderMenus { // GUI creator for final ordering menu.
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextArea textField_2;
@@ -30,7 +30,7 @@ public class allOrderMenus {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	void createAndShowGUI() throws IOException {
+	void createAndShowGUI() throws IOException { // GUI initializer for frames and panels.
 		
 		final JFrame frmOrder = new JFrame("Create New Account");
 		frmOrder.setTitle("Order Now?");
