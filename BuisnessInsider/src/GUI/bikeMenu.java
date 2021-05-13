@@ -35,7 +35,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 
-public class bikeMenu {
+public class bikeMenu { // Preset menu for bike shop.
 	static private JFrame frame;
 	static private JButton backButton, orderButton;
 	private static JButton backButton_1;
@@ -101,7 +101,7 @@ public class bikeMenu {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	void createAndShowGUI() throws IOException {
+	void createAndShowGUI() throws IOException { // GUI initializer for all panels and frames.
 		
 		frame = new JFrame("Bikes N' More");
 		frame.setBounds(100, 100, 780, 550);
@@ -204,7 +204,7 @@ public class bikeMenu {
 		
 	}
 
-	void addIt(JTabbedPane tabbedPane, String text) throws IOException {
+	void addIt(JTabbedPane tabbedPane, String text) throws IOException { // Adds new tabs for shop product category.
 		JPanel panel = new JPanel(new GridBagLayout());
 		gbc = new GridBagConstraints(); // getting constraints for the specified
 										// component
@@ -280,7 +280,7 @@ public class bikeMenu {
 		}
 	}
 
-	void addIt2(JTabbedPane tabbedPane, String text) throws IOException {
+	void addIt2(JTabbedPane tabbedPane, String text) throws IOException { // Adds new tabs for shop product category.
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		dessertImage = new JLabel[DESSERT_ELEMENTS];
@@ -325,7 +325,7 @@ public class bikeMenu {
 			} 
 		}
 
-	void addIt1(JTabbedPane tabbedPane, String text) throws IOException {
+	void addIt1(JTabbedPane tabbedPane, String text) throws IOException { // Adds new tabs for shop product category.
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		drinkImage = new JLabel[DRINK_ELEMENTS];
@@ -386,11 +386,11 @@ public class bikeMenu {
 		}
 	}
 
-	private String formatNumberToPrice(Number number) {
+	private String formatNumberToPrice(Number number) { // Formats number to approximate price.
 		String valueFinal = String.format("$%.2f",number);
 		return valueFinal;
-	}
-	private void updateTable(int quantity, Object source ) {
+	} 
+	private void updateTable(int quantity, Object source ) { // Updates table.
 		final int rows = table_1.getRowCount();
 		for (int row = 0; row < rows; row++) {
 			if (dtm.getValueAt(row, 3) .equals(source)) {
@@ -507,7 +507,7 @@ public class bikeMenu {
 		}
 	}
 	ChangeListener listener = new ChangeListener() {
-		public void stateChanged(ChangeEvent e) {
+		public void stateChanged(ChangeEvent e) { // Checks if state has changed.
 
 			final int quantity = (int) ((JSpinner) e.getSource()).getValue();
 			updateTable(quantity,e.getSource());
@@ -515,7 +515,7 @@ public class bikeMenu {
 		}
 	};
 	
-		private void updateTable1(int quantity, Object source ) {
+		private void updateTable1(int quantity, Object source ) { // Updates table with new quantities.
 
 			
 			final int rows = table_1.getRowCount();
@@ -569,7 +569,7 @@ public class bikeMenu {
 			}
 		}
 		ChangeListener listenerForDesserts = new ChangeListener() {
-			public void stateChanged(ChangeEvent e) {
+			public void stateChanged(ChangeEvent e) { // Checks for any changes in state.
 
 				final int quantity = (int) ((JSpinner) e.getSource()).getValue();
 				updateTable1(quantity,e.getSource());
@@ -579,7 +579,7 @@ public class bikeMenu {
 
 
 	
-		private void updateTable2(int quantity, Object source ) {
+		private void updateTable2(int quantity, Object source ) { // Updates further quantities.
 			final int rows = table_1.getRowCount();
 			for (int row = 0; row < rows; row++) {
 				if (dtm.getValueAt(row, 3) .equals(source)) {
@@ -661,7 +661,7 @@ public class bikeMenu {
 
 		}
 		ChangeListener listenerForDrinks = new ChangeListener() {
-			public void stateChanged(ChangeEvent e) {
+			public void stateChanged(ChangeEvent e) { // Once again checks for a change in the state.
 				final int quantity = (int) ((JSpinner) e.getSource()).getValue();
 				updateTable2(quantity,e.getSource());
 			}
