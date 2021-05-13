@@ -19,12 +19,12 @@ import javax.swing.JTextField;
 import GUI.startUp;
 import javax.swing.JTextArea;
 
-public class infoPanel {
+public class infoPanel { // Shows instructions for customer.
 	
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	void initUI4() throws IOException {
+	void initUI4() throws IOException { // Inititialzes all panels and frames.
 		
 		JFrame frmCustomerInfo = new JFrame("Create New Account");
 		frmCustomerInfo.setTitle("Customer Info");
