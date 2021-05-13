@@ -16,12 +16,12 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import GUI.startUp;
 
-public class loginSystem {
+public class loginSystem { // Login system for business aspect and account.
 	
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	void initUI() throws IOException {
+	void initUI() throws IOException { // Initializes all frames and panels.
 		
 		JFrame frame = new JFrame("Login");
     	
@@ -63,15 +63,6 @@ public class loginSystem {
 
 		JButton loginButton = new JButton("Login");
 		 loginButton.setFont(new Font("Microsoft YaHei Light", Font.PLAIN, 12));
-		 loginButton.addActionListener(new ActionListener() {
-             @Override
-     		public void actionPerformed(ActionEvent e) {
-            	
-             	// BUISNESS STATS GO HERE 
-             	
-             }
-             });
-		 
 		loginButton.setBounds(100, 80, 160, 25);
 		panel1.add(loginButton);
 		
