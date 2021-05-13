@@ -35,7 +35,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 
-public class farmerMenu {
+public class farmerMenu { // Local Farmers market present Menu.
 	static private JFrame frame;
 	static private JButton backButton, orderButton;
 	private static JButton backButton_1;
@@ -101,7 +101,7 @@ public class farmerMenu {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	void createAndShowGUI() throws IOException {
+	void createAndShowGUI() throws IOException { // Initializes all frames and panels.
 		
 		frame = new JFrame("Local Famers Market");
 		frame.setBounds(100, 100, 780, 550);
@@ -201,7 +201,7 @@ public class farmerMenu {
 		
 	}
 
-	void addIt(JTabbedPane tabbedPane, String text) throws IOException {
+	void addIt(JTabbedPane tabbedPane, String text) throws IOException { // Adds the first tab of category.
 		JPanel panel = new JPanel(new GridBagLayout());
 		gbc = new GridBagConstraints(); // getting constraints for the specified
 										// component
@@ -277,7 +277,7 @@ public class farmerMenu {
 		}
 	}
 
-	void addIt2(JTabbedPane tabbedPane, String text) throws IOException {
+	void addIt2(JTabbedPane tabbedPane, String text) throws IOException { // Adds the second tab of category.
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		dessertImage = new JLabel[DESSERT_ELEMENTS];
@@ -322,7 +322,7 @@ public class farmerMenu {
 			} 
 		}
 
-	void addIt1(JTabbedPane tabbedPane, String text) throws IOException {
+	void addIt1(JTabbedPane tabbedPane, String text) throws IOException { // Adds the third tab of category.
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		drinkImage = new JLabel[DRINK_ELEMENTS];
@@ -383,11 +383,11 @@ public class farmerMenu {
 		}
 	}
 
-	private String formatNumberToPrice(Number number) {
+	private String formatNumberToPrice(Number number) { // Formats number to price and decimals.
 		String valueFinal = String.format("$%.2f",number);
 		return valueFinal;
 	}
-	private void updateTable(int quantity, Object source ) {
+	private void updateTable(int quantity, Object source ) { // Updates table.
 		final int rows = table_1.getRowCount();
 		for (int row = 0; row < rows; row++) {
 			if (dtm.getValueAt(row, 3) .equals(source)) {
@@ -504,7 +504,7 @@ public class farmerMenu {
 		}
 	}
 	ChangeListener listener = new ChangeListener() {
-		public void stateChanged(ChangeEvent e) {
+		public void stateChanged(ChangeEvent e) { // Checks for changed state.
 
 			final int quantity = (int) ((JSpinner) e.getSource()).getValue();
 			updateTable(quantity,e.getSource());
@@ -512,7 +512,7 @@ public class farmerMenu {
 		}
 	};
 	
-		private void updateTable1(int quantity, Object source ) {
+		private void updateTable1(int quantity, Object source ) { // Updates 2nd tabs table. 
 
 			
 			final int rows = table_1.getRowCount();
@@ -565,7 +565,7 @@ public class farmerMenu {
 			}
 		}
 		ChangeListener listenerForDesserts = new ChangeListener() {
-			public void stateChanged(ChangeEvent e) {
+			public void stateChanged(ChangeEvent e) { // Checks for any change in state.
 
 				final int quantity = (int) ((JSpinner) e.getSource()).getValue();
 				updateTable1(quantity,e.getSource());
@@ -575,7 +575,7 @@ public class farmerMenu {
 
 
 	
-		private void updateTable2(int quantity, Object source ) {
+		private void updateTable2(int quantity, Object source ) { // Updates 3rd tabs table.
 			final int rows = table_1.getRowCount();
 			for (int row = 0; row < rows; row++) {
 				if (dtm.getValueAt(row, 3) .equals(source)) {
@@ -657,7 +657,7 @@ public class farmerMenu {
 
 		}
 		ChangeListener listenerForDrinks = new ChangeListener() {
-			public void stateChanged(ChangeEvent e) {
+			public void stateChanged(ChangeEvent e) { // Checks for any change in state.
 				final int quantity = (int) ((JSpinner) e.getSource()).getValue();
 				updateTable2(quantity,e.getSource());
 			}
