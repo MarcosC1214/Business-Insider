@@ -23,12 +23,12 @@ import javax.swing.WindowConstants;
 import GUI.partyMenu;
 import javax.swing.JScrollPane;
 
-public class customerPanel {
+public class customerPanel { // Class in charge of opening Customer main menu.
   
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	void initUI3() throws IOException {
+	void initUI3() throws IOException { // Initializes all frames and panels.
     final JFrame f = new JFrame("Customer Main Menu");
     f.setSize(500, 275);
     f.setLocation(800, 300);
@@ -80,7 +80,7 @@ public class customerPanel {
     
     jmiAbout.addActionListener(new ActionListener() {
         @Override
-		public void actionPerformed(ActionEvent ev) {
+		public void actionPerformed(ActionEvent ev) { 
         	infoPanel info;
 			try {
 				info = new infoPanel();
