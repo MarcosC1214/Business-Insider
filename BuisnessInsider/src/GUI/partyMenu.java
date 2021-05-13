@@ -36,7 +36,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 
-public class partyMenu {
+public class partyMenu { // Final preset business in the list.
 	static private JFrame frmPartyBakery;
 	static private JButton backButton, orderButton;
 	private static JButton backButton_1;
@@ -102,7 +102,7 @@ public class partyMenu {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	void createAndShowGUI() throws IOException {
+	void createAndShowGUI() throws IOException { // Initializes all frames and panels.
 		
 		frmPartyBakery = new JFrame("Main Menu ");
 		frmPartyBakery.setTitle("Party Bakery");
@@ -206,7 +206,7 @@ public class partyMenu {
 		
 	}
 
-	void addIt(JTabbedPane tabbedPane, String text) throws IOException {
+	void addIt(JTabbedPane tabbedPane, String text) throws IOException { // Adds the pane to the first tab.
 		JPanel panel = new JPanel(new GridBagLayout());
 		gbc = new GridBagConstraints(); // getting constraints for the specified
 										// component
@@ -284,7 +284,7 @@ public class partyMenu {
 	
 	
 
-	void addIt2(JTabbedPane tabbedPane, String text) throws IOException {
+	void addIt2(JTabbedPane tabbedPane, String text) throws IOException { // Adds the pane to the second tab.
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		dessertImage = new JLabel[DESSERT_ELEMENTS];
@@ -330,7 +330,7 @@ public class partyMenu {
 			} 
 		}
 
-	void addIt1(JTabbedPane tabbedPane, String text) throws IOException {
+	void addIt1(JTabbedPane tabbedPane, String text) throws IOException { // Adds the pane to the third tab.
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		drinkImage = new JLabel[DRINK_ELEMENTS];
@@ -390,12 +390,12 @@ public class partyMenu {
 			
 		}
 	}
-
-	private String formatNumberToPrice(Number number) {
+ 
+	private String formatNumberToPrice(Number number) { // Formats the numbers price to decimal.
 		String valueFinal = String.format("$%.2f",number);
 		return valueFinal;
 	}
-	private void updateTable(int quantity, Object source ) {
+	private void updateTable(int quantity, Object source ) { // Updates the table in the first tab.
 		final int rows = table_1.getRowCount();
 		for (int row = 0; row < rows; row++) {
 			if (dtm.getValueAt(row, 3) .equals(source)) {
@@ -512,7 +512,7 @@ public class partyMenu {
 		}
 	}
 	ChangeListener listener = new ChangeListener() {
-		public void stateChanged(ChangeEvent e) {
+		public void stateChanged(ChangeEvent e) { // Checks for any change in state.
 
 			final int quantity = (int) ((JSpinner) e.getSource()).getValue();
 			updateTable(quantity,e.getSource());
@@ -520,7 +520,7 @@ public class partyMenu {
 		}
 	};
 	
-		private void updateTable1(int quantity, Object source ) {
+		private void updateTable1(int quantity, Object source ) { // Updates the table in the second tab.
 
 			
 			final int rows = table_1.getRowCount();
@@ -573,7 +573,7 @@ public class partyMenu {
 			}
 		}
 		ChangeListener listenerForDesserts = new ChangeListener() {
-			public void stateChanged(ChangeEvent e) {
+			public void stateChanged(ChangeEvent e) { // Checks for any change in state.
 
 				final int quantity = (int) ((JSpinner) e.getSource()).getValue();
 				updateTable1(quantity,e.getSource());
@@ -583,7 +583,7 @@ public class partyMenu {
 
 
 	
-		private void updateTable2(int quantity, Object source ) {
+		private void updateTable2(int quantity, Object source ) { // Updates the table in the third tab.
 			final int rows = table_1.getRowCount();
 			for (int row = 0; row < rows; row++) {
 				if (dtm.getValueAt(row, 3) .equals(source)) {
@@ -665,7 +665,7 @@ public class partyMenu {
 
 		}
 		ChangeListener listenerForDrinks = new ChangeListener() {
-			public void stateChanged(ChangeEvent e) {
+			public void stateChanged(ChangeEvent e) { // Checks for any change in state.
 				final int quantity = (int) ((JSpinner) e.getSource()).getValue();
 				updateTable2(quantity,e.getSource());
 			}
