@@ -24,13 +24,13 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.AbstractAction;
 
-public class startUp {
+public class startUp { // Includes animations and title panel.
 private JTextField textField;
 private boolean isClicked = true;
 
 
    
-private static class FadingPanel extends JPanel {
+private static class FadingPanel extends JPanel { // Class in charge of introduction panel fading effect.
         private BufferedImage buffer;
         private boolean isFading = false;
         private long start;
@@ -42,7 +42,7 @@ private static class FadingPanel extends JPanel {
        
 
         @Override
-        public void paint(Graphics g) {
+        public void paint(Graphics g) { // Paint method for repaintig and updating panels.
             if (isFading) {// During fading, we prevent child components from being painted
                 g.clearRect(0, 0, getWidth(), getHeight());
                 ((Graphics2D) g).setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
@@ -54,7 +54,7 @@ private static class FadingPanel extends JPanel {
         
         
 
-        public void fadeOut(int time) {
+        public void fadeOut(int time) { // Fade out method for the amount of time fading effect will last.
             start = System.currentTimeMillis();
             buffer = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
             this.print(buffer.getGraphics());// Draw the current components on the buffer
@@ -90,8 +90,6 @@ private static class FadingPanel extends JPanel {
 	JFrame frmWelcome = new JFrame(startUp.class.getSimpleName());
 
 
-//THREAD START
-
 
 final static JButton btnNewButton = new JButton("Login");
 
@@ -106,7 +104,7 @@ final static JLabel lblNewLabel = new JLabel("Business Insider");
      /**
       * @wbp.parser.entryPoint
       */
-     void initUI() throws IOException {
+     void initUI() throws IOException { // Initializes all frames and panels.
     	
     	 
     	 
@@ -283,18 +281,10 @@ frmWelcome.getContentPane().add(panel);
     
         
     }
-     
-  
-
-
-	
-	private class SwingAction extends AbstractAction {
+	private class SwingAction extends AbstractAction { // New class to determine any swing actions.
 		public SwingAction() {
 			putValue(NAME, "SwingAction");
 			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		@Override
-		public void actionPerformed(ActionEvent e) {
 		}
 	}
 }
