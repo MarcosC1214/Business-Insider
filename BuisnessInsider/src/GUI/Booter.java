@@ -8,9 +8,9 @@ import GUI.startUp;
 
 
 
-public class Booter {
+public class Booter { // Booter class to boot up the program.
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception { // Static method to run program 
 		
 		boolean aa;
 		
@@ -21,7 +21,7 @@ public class Booter {
         SwingUtilities.invokeLater(new Runnable() {
 
             @Override
-            public void run() {
+            public void run() { // Void run method.
                 try {
                     new startUp().initUI();
                 } catch (MalformedURLException e) {
