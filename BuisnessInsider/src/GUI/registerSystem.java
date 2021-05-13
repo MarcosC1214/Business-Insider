@@ -18,12 +18,12 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import GUI.startUp;
 
-public class registerSystem {
+public class registerSystem { // Registering system for Business Owners.
 	
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	void initUI1() throws IOException {
+	void initUI1() throws IOException { // Initializes all frames and panels.
 		
 		JFrame frame = new JFrame("Create New Account");
     	
@@ -70,15 +70,6 @@ public class registerSystem {
 
 		JButton loginButton = new JButton("Continue As Buisness");
 		 loginButton.setFont(new Font("Microsoft YaHei Light", Font.PLAIN, 12));
-		 loginButton.addActionListener(new ActionListener() {
-             @Override
-     		public void actionPerformed(ActionEvent e) {
-            	
-             	//BUISNESS STARTS HERE AS WELL AS SAVE 
-         		 
-             }
-             });
-		 
 		loginButton.setBounds(127, 82, 160, 25);
 		panel1.add(loginButton);
 		
